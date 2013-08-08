@@ -34,6 +34,13 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
+
+ln -sb dotfiles/.screenrc .
+ln -sb dotfiles/.bash_profile .
+ln -sb dotfiles/.bashrc .
+ln -sb dotfiles/.bashrc_custom .
+ln -sf dotfiles/.emacs.d .
+
 if [ -d ./startup_matls ]; then
     mv startup_matls startup_matls.old
 fi
@@ -44,9 +51,8 @@ fi
 git clone https://github.com/alexwe/dotfiles.git
 git clone https://github.com/alexwe/startup_matls.git
 git clone https://github.com/alexwe/bitstarter.git
-ln -sb dotfiles/.screenrc .
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
+
+# Install heroku
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 
