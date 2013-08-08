@@ -34,6 +34,13 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
+if [ -d ./startup_matls ]; then
+    mv startup_matls startup_matls.old
+fi
+if [ -d ./bitstarter ]; then
+    mv bitstarter bitstarter.old
+fi
+
 git clone https://github.com/alexwe/dotfiles.git
 git clone https://github.com/alexwe/startup_matls.git
 git clone https://github.com/alexwe/bitstarter.git
